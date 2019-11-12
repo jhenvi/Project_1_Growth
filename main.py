@@ -171,7 +171,7 @@ Yearly_Employment_NAICS54_1988_2018_bySex.pct_change().max()
 
 # ### CREATE GRAPH TO SHOW GROWTH IN EMPLOYMENT RATE BY GENDER
 
-# In[26]:
+# In[33]:
 
 
 # Plot data into bar graph and label 
@@ -181,12 +181,13 @@ plt.xlabel("YEARS")
 plt.ylabel("NUMBER EMPLOYED")
 plt.xticks(np.arange(1988, 2020, 5)) 
 plt.yticks(np.arange(300, 2000, 300)) 
+plt.savefig("MALE & FEMALE EMPLOYMENT GROWTH, NAICS [54], CANADA, 1988  - 2018.png")
 plt.show()
 
 
 # ### FIND TOTAL EMPLOYED BY PROVINCE - NAICS 54, 1988 - 2018
 
-# In[21]:
+# In[30]:
 
 
 # Pull only data needed for calcualtions: NAICS: [54], Both Sexes, Labour Force: Employment, Geo: All provinces
@@ -194,7 +195,7 @@ df_NAICS_54_GEO = df3.loc[(df3["North American Industry Classification System (N
 df_NAICS_54_GEO.dropna().head()
 
 
-# In[22]:
+# In[31]:
 
 
 # Group by years and GEO to show Total Employed within NAICS [54] each year, 1988 - 2018
@@ -203,7 +204,7 @@ Yearly_Employment_NAICS54_1988_2018_byProvinces = pd.DataFrame(df_NAICS_54_1988_
 Yearly_Employment_NAICS54_1988_2018_byProvinces.head()
 
 
-# In[23]:
+# In[32]:
 
 
 # Create and label graph
@@ -213,12 +214,13 @@ plt.xlabel("YEARS")
 plt.ylabel("NUMBER EMPLOYED")
 plt.xticks(np.arange(1988, 2020, 5)) 
 plt.yticks(np.arange(-20, 1300, 300)) 
+plt.savefig("PROVINCIAL LABOUR GROWTH, NAICS [54], CANADA, 1988  - 2018.png")
 plt.show()
 
 
 # ### FIND TOTAL EMPLOYED BY AGE GROUP - NAICS 54, 1988 - 2018
 
-# In[24]:
+# In[34]:
 
 
 # Pull only data needed for calcualtions: NAICS: [54], Both Sexes, Labour Force: Employment, Geo: Canada
@@ -226,7 +228,7 @@ df_NAICS_54_AGE = df3.loc[(df3["North American Industry Classification System (N
 df_NAICS_54_GEO.dropna().head()
 
 
-# In[25]:
+# In[35]:
 
 
 # Group by years and AGE to show Total Employers within NAICS [54] each year, 1988 - 2018
@@ -235,7 +237,7 @@ Yearly_Employment_NAICS54_1988_2018_byAGE = pd.DataFrame(df_NAICS_54_1988_2019_A
 Yearly_Employment_NAICS54_1988_2018_byAGE.head()
 
 
-# In[26]:
+# In[36]:
 
 
 # Create & label graph
@@ -243,6 +245,7 @@ pltAGE = Yearly_Employment_NAICS54_1988_2018_byAGE["VALUE"].unstack().plot(kind=
 plt.title("AGE GROUP GROWTH, NAICS [54], CANADA, 1988  - 2018")
 plt.xlabel("YEARS")
 plt.ylabel("EMPLOYED")
+plt.savefig("AGE GROUP GROWTH, NAICS [54], CANADA, 1988  - 2018.png")
 plt.show()
 
 
